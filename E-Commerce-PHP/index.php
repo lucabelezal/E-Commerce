@@ -112,8 +112,8 @@ $result = mysqli_query($db_con, $query);
                                                             <li><span></span><a href="#"><span></span>Blouses</a></li>
                                                         </ul>
                                                     </li>
+                                                    <li><span></span><a href="#">Sofás</a></li>
                                                     <li><span></span><a href="#">Poltronas</a></li>
-                                                    <li><span></span><a href="#">Dresses</a></li>
                                                     <li><span></span><a href="#">Cadeiras</a></li>
                                                     <li><span></span><a href="#">Mesas</a></li>
                                                     <li><span></span><a href="#">Racks</a></li>
