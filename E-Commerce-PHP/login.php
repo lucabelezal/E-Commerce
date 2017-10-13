@@ -43,7 +43,7 @@
 	<body>
 
 		<div class="menu">
-			<?php include 'header.html';?>
+			<?php include 'include/header.html';?>
 		</div>
 
 		<!-- page wapper-->
@@ -98,7 +98,7 @@
 		<!-- ./page wapper-->
 
 		<div class="footer">
-			<?php include 'footer.html';?>
+			<?php include 'include/footer.html';?>
 		</div>
 	</body>
 	</html>

@@ -31,7 +31,7 @@ $result = mysqli_query($db_con, $query);
 	<!-- HEADER -->
 
 	<div class="menu">
-		<?php include 'header.html';?>
+		<?php include 'include/header.html';?>
 	</div>
 
 	<!-- end header -->
@@ -320,7 +320,7 @@ $result = mysqli_query($db_con, $query);
 		</div>
 
 		<div class="footer">
-			<?php include 'footer.html';?>
+			<?php include 'include/footer.html';?>
 		</div>
 
 

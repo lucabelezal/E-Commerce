@@ -35,7 +35,7 @@ $result = mysqli_query($db_con, $query);
 
 
 	<div class="menu">
-		<?php include 'header.html';?>
+		<?php include 'include/header.html';?>
 	</div>
 
 
@@ -459,7 +459,7 @@ $result = mysqli_query($db_con, $query);
 
 
 	<div class="footer">
-		<?php include 'footer.html';?>
+		<?php include 'include/footer.html';?>
 	</div>
 
 </body>
