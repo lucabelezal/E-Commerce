@@ -1,11 +1,11 @@
 <?php
-require_once("db.php");
+require_once("sql_helper/db.php");
 $query_cat = "select * from category";
 $result_cat = mysqli_query($db_con, $query_cat);
 ?>
 
 <?php
-require_once("db.php");
+require_once("sql_helper/db.php");
 $query = "select * from product where c_id={$_GET['cid']}";
 $result = mysqli_query($db_con, $query);
 ?>

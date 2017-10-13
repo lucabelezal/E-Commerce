@@ -19,14 +19,15 @@
 <body>
 
     <div class="container">
-                        <!-- left silide -->
-                <div class="col-left-slide left-module">
-                    <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
-                        <li><a href="#"><img src="assets/data/painel_1.jpg" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="assets/data/painel_2.jpg" alt="slide-left"></a></li>
-                        <li><a href="#"><img src="assets/data/painel_1.jpg" alt="slide-left"></a></li>
-                    </ul>
-                </div>
+
+        <div class="col-left-slide left-module">
+            <ul class="owl-carousel owl-style2" data-loop="true" data-nav = "false" data-margin = "30" data-autoplayTimeout="1000" data-autoplayHoverPause = "true" data-items="1" data-autoplay="true">
+                <li><a href="#"><img src="assets/data/painel_1.jpg" alt="slide-left"></a></li>
+                <li><a href="#"><img src="assets/data/painel_2.jpg" alt="slide-left"></a></li>
+                <li><a href="#"><img src="assets/data/painel_1.jpg" alt="slide-left"></a></li>
+            </ul>
+        </div>
+        
     </div>
     
 </body>

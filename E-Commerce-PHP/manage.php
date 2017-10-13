@@ -6,7 +6,7 @@ if($_SESSION['type'] != "admin"){
 	header('Location: logout.php');
 }
 
-require_once("db.php");
+require_once("sql_helper/db.php");
 $query_cat = "select * from category";
 $result_cat1 = mysqli_query($db_con, $query_cat);
 $result_cat2 = mysqli_query($db_con, $query_cat);
@@ -89,7 +89,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 		<hr />
 
 
-		<form class="form_manager" action="execute.php" method="post">	
+		<form class="form_manager" action="sql_helper/execute.php" method="post">	
 
 			<div class="form-group">
 				<label>Adicionar uma categoria de produto:</label>
@@ -104,7 +104,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">
+		<form class="form_manager" action="sql_helper/execute.php" method="post">
 			<div class="form-group">					
 				<label class="title">Excluir uma categoria de produto:</label>
 			</div>
@@ -131,7 +131,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 		
 
-		<form class="form_manager" action="execute.php" method="post" enctype="multipart/form-data">		
+		<form class="form_manager" action="sql_helper/execute.php" method="post" enctype="multipart/form-data">		
 
 			<div class="form-group">
 				<label class="title">Adicionar um Produto:</label>
@@ -172,7 +172,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">	
+		<form class="form_manager" action="sql_helper/execute.php" method="post">	
 
 			<div class="form-group">
 				<label class="title">Change Product Price:</label>
@@ -193,7 +193,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">	
+		<form class="form_manager" action="sql_helper/execute.php" method="post">	
 
 
 			<div class="form-group">
@@ -210,7 +210,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">
+		<form class="form_manager" action="sql_helper/execute.php" method="post">
 
 			<div class="form-group">
 				<label class="title">Adicionar um showroom:</label>
@@ -239,7 +239,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">
+		<form class="form_manager" action="sql_helper/execute.php" method="post">
 
 			<div class="form-group">
 				<label class="title">Excluir Showroom:</label>
@@ -255,7 +255,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 
 
 
-		<form class="form_manager" action="execute.php" method="post">	
+		<form class="form_manager" action="sql_helper/execute.php" method="post">	
 
 			<div class="form-group">
 				<label class="title">Mudar Senha:</label>

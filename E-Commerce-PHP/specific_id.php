@@ -1,5 +1,5 @@
 <?php
-require_once("db.php");
+require_once("sql_helper/db.php");
 $query = "select * from product where id={$_GET['id']}";
 $result = mysqli_query($db_con, $query);
 ?>

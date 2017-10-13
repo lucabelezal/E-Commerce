@@ -1,7 +1,7 @@
 <?php
 	error_reporting(0);
 	session_start();
-	require_once("db.php");
+	require_once("sql_helper/db.php");
 
 	if(isset($_POST['submit'])){
 		$name = $_POST['uname'];
