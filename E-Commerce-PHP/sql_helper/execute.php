@@ -2,45 +2,47 @@
 	error_reporting(0);
 	session_start();
 
+	$email = utf8_decode($_POST['submit']);
+	$show = utf8_decode($_POST['cat_name']);
+
 	if($_SESSION['type'] != "admin"){
 		header('Location: logout.php');
 	}
-
 
 	if(!isset($_POST['submit'])){
 		header('Location: manage.php');
 	}
 	$msg = "";
 
-	if($_POST['submit'] == "Add Category"){
+	if($_POST['submit'] == "ADICIONAR CATEGORIA"){
 		$msg = add_category();
 	}
 
-	if($_POST['submit'] == "Delete Category"){		
+	if($_POST['submit'] == "DELETAR CATEGORIA"){		
 		$msg = delete_category();
 	}
 	
-	if($_POST['submit'] == "Add product"){
+	if($_POST['submit'] == "ADICIONAR PRODUTO"){
 		$msg = add_product();
 	}
 
-	if($_POST['submit'] == "Change Price"){
+	if($_POST['submit'] == "MUDAR O PREÇO"){
 		$msg = change_price();
 	}
 
-	if($_POST['submit'] == "Delete Product"){
+	if($_POST['submit'] == "EXCLUIR PRODUTO"){
 		$msg = delete_product();
 	}
 
-	if($_POST['submit'] == "Add Showroom"){
+	if($_POST['submit'] == "ADICIONAR Showroom"){
 		$msg = add_showroom();
 	}
 
-	if($_POST['submit'] == "Delete Showroom"){
+	if($_POST['submit'] == "EXCLUIR Showroom"){
 		$msg = delete_showroom();
 	}
 
-	if($_POST['submit'] == "Change password"){
+	if($_POST['submit'] == "MUDAR SENHA"){
 		$msg = change_pass();
 	}
 ?>
@@ -64,6 +66,8 @@
 	<body>
 		<div>
 			<p><?php echo $msg; ?></p>
+			<p><?php echo $show; ?></p>
+			<p><?php echo "teste $email "; ?></p>
 			<br />
 			<a href="manage.php">Go back</a>
 		</div>

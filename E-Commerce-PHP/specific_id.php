@@ -4,8 +4,6 @@ $query = "select * from product where id={$_GET['id']}";
 $result = mysqli_query($db_con, $query);
 ?>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -164,22 +162,15 @@ $result = mysqli_query($db_con, $query);
 											</div>
 										</div>
 									</div>
-									<!-- <div class="attributes">
-										<div class="attribute-label">Size:</div>
-										<div class="attribute-list">
-											<select>
-												<option value="1">X</option>
-												<option value="2">XL</option>
-												<option value="3">XXL</option>
-											</select>
-											<a id="size_chart" class="fancybox" href="assets/data/size-chart.jpg">Size Chart</a>
-										</div>
-
-									</div> -->
 								</div>
 								<div class="form-action">
 									<div class="button-group">
-										<a class="btn-add-cart" href="#">Adicionar ao carrinho</a>
+										
+
+										<form action="index.php?page=cart&action=add" method="post">
+											<input name="id" type="hidden" value="<?php echo $row["id"] ?>"/>
+											<button type="submit" class="btn-add-cart">Adicionar ao Carrinho</button>
+										</form>
 									</div>
 									<div class="button-group">
 										<a class="wishlist" href="#"><i class="fa fa-heart-o"></i>
@@ -247,7 +238,7 @@ $result = mysqli_query($db_con, $query);
 											<div class="comment row">
 												<div class="col-sm-3 author">
 													<div class="grade">
-														<span>Grade</span>
+														<span>Estrelas</span>
 														<span class="reviewRating">
 															<i class="fa fa-star"></i>
 															<i class="fa fa-star"></i>
@@ -268,7 +259,7 @@ $result = mysqli_query($db_con, $query);
 											<div class="comment row">
 												<div class="col-sm-3 author">
 													<div class="grade">
-														<span>Grade</span>
+														<span>Estrelas</span>
 														<span class="reviewRating">
 															<i class="fa fa-star"></i>
 															<i class="fa fa-star"></i>
@@ -287,7 +278,7 @@ $result = mysqli_query($db_con, $query);
 												</div>
 											</div>
 											<p>
-												<a class="btn-comment" href="#">Write your review !</a>
+												<a class="btn-comment" href="#">Escreva uma avaliação !</a>
 											</p>
 										</div>
 
@@ -319,9 +310,16 @@ $result = mysqli_query($db_con, $query);
 			</div>
 		</div>
 
-		<div class="footer">
-			<?php include 'include/footer.html';?>
-		</div>
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="container">
+				<div class="footer">
+					<?php include 'include/footer.html';?>
+				</div>
+
+			</div>
+		</footer>
+
 
 
 

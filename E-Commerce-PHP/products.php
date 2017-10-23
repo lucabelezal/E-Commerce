@@ -360,7 +360,7 @@ $result = mysqli_query($db_con, $query);
 													</div>
 
 													<div class="right-block">
-														<h5 class="product-name"><a href="dspecific_id.php"><?php echo $row["name"] ?></a></h5>
+														<h5 class="product-name"><a href="specific_id.php"><?php echo $row["name"] ?></a></h5>
 														<div class="product-star">
 															<i class="fa fa-star"></i>
 															<i class="fa fa-star"></i>
