@@ -51,7 +51,7 @@ $result = mysqli_query($db_con, $query);
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/style_products.css">
-    <title>Products</title>
+    <title>Home</title>
 </head>
 <body>
 
@@ -202,6 +202,12 @@ $result = mysqli_query($db_con, $query);
                             <li>
                                 <img src="assets/data/painel_2.jpg" alt="category-slider">
                             </li>
+                            <li>
+                                <img src="assets/data/painel_4.jpg" alt="category-slider">
+                            </li>
+                            <li>
+                                <img src="assets/data/painel_5.gif" alt="category-slider">
+                            </li>
                         </ul>
                     </div>
                     <!-- ./category-slider -->
@@ -230,7 +236,7 @@ $result = mysqli_query($db_con, $query);
 
 
                                     <?php foreach ($products as $product) : ?>
-                                     <li class="col-sx-12 col-sm-4">
+                                       <li class="col-sx-12 col-sm-4">
 
                                         <div class="product-container">
 
@@ -295,49 +301,49 @@ $result = mysqli_query($db_con, $query);
     </div><!-- ./row-->
     <!-- END PRODUCTS -->
 
-                    <!-- PAGINATION -->     
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="sortPagiBar row">
-                                <div class="bottom-pagination" style="margin-bottom: 25px; margin-right: 100px;">
-                                    <nav>
-                                        <ul class="pagination">
-                                            <li class="active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li>
-                                                <a href="#" aria-label="Next">
-                                                    <span aria-hidden="true">Próximo &raquo;</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                                <div class="show-product-item">
-                                    <select name="">
-                                        <option value="">Mostrar 18</option>
-                                        <option value="">Mostrar 20</option>
-                                        <option value="">Mostrar 50</option>
-                                        <option value="">Mostrar 100</option>
-                                    </select>
-                                </div>
-                                <div class="sort-product">
-                                    <select>
-                                        <option value="">Nome do produto</option>
-                                        <option value="">Preço</option>
-                                    </select>
-                                    <div class="sort-product-icon">
-                                        <i class="fa fa-sort-alpha-asc"></i>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- PAGINATION -->     
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sortPagiBar row">
+                    <div class="bottom-pagination" style="margin-bottom: 25px; margin-right: 100px;">
+                        <nav>
+                            <ul class="pagination">
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li><a href="#">5</a></li>
+                                <li>
+                                    <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">Próximo &raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="show-product-item">
+                        <select name="">
+                            <option value="">Mostrar 18</option>
+                            <option value="">Mostrar 20</option>
+                            <option value="">Mostrar 50</option>
+                            <option value="">Mostrar 100</option>
+                        </select>
+                    </div>
+                    <div class="sort-product">
+                        <select>
+                            <option value="">Nome do produto</option>
+                            <option value="">Preço</option>
+                        </select>
+                        <div class="sort-product-icon">
+                            <i class="fa fa-sort-alpha-asc"></i>
                         </div>
                     </div>
                 </div>
-                <!-- END PAGINATION -->
+            </div>
+        </div>
+    </div>
+    <!-- END PAGINATION -->
 
     <footer>
         <div class="footer">

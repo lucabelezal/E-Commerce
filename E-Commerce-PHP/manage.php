@@ -33,7 +33,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
-	<title></title>
+	<title>Gerenciador</title>
 
 	<style>
 

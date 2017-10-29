@@ -30,7 +30,7 @@ $_SESSION['id'] = $id;
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 	<link rel="stylesheet" type="text/css" href="css/style_products.css">
-	<title>Products</title>
+	<title>Produtos</title>
 </head>
 
 
@@ -299,6 +299,12 @@ $_SESSION['id'] = $id;
 							</li>
 							<li>
 								<img src="assets/data/painel_2.jpg" alt="category-slider">
+							</li>
+							<li>
+								<img src="assets/data/painel_4.jpg" alt="category-slider">
+							</li>
+							<li>
+								<img src="assets/data/painel_5.gif" alt="category-slider">
 							</li>
 						</ul>
 					</div>

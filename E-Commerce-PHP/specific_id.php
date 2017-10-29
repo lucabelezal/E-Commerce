@@ -21,7 +21,7 @@ $result = mysqli_query($db_con, $query);
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 
-	<title>Kute shop</title>
+	<title>Detalhes</title>
 </head>
 <body class="product-page">
 

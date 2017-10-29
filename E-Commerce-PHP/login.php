@@ -43,7 +43,7 @@ if(isset($_POST['submit'])){
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
-	<title></title>
+	<title>Autenticação</title>
 	<script type="text/javascript">
 		function fMasc(objeto,mascara) {
 			obj=objeto

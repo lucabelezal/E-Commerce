@@ -23,7 +23,7 @@ $_SESSION['id'] = $id;
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
     <link rel="stylesheet" type="text/css" href="css/style_products.css">
-    <title>Products</title>
+    <title>Carrinho</title>
 </head>
 <body>
    <!-- Header -->
