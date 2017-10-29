@@ -1,0 +1,170 @@
+body {
+	font-family: "SegoeUIRegular", sans-serif;
+	width:600px;
+	margin: auto;
+	font-size: 15px
+}
+form {
+	border: 1px solid ;
+	padding-top: 40px;
+	padding-left: 30px;
+}
+form div {
+	display: inline-block;
+	height: 80px;
+}
+form div>div:first-child {
+	width:156px;
+	vertical-align: top;
+
+}
+form div:not(:first-child) div:last-child{
+	width:244px;
+}
+form div:not(:first-child) div:last-child input{
+	width:inherit;
+}
+ul {
+	display: block;
+	list-style-type: none;
+	padding: 0px;
+	color: #F08080;
+	font-size: 12px
+}
+.logo {
+	width:inherit;
+	height: 150px;
+}
+.mainwrap_btnSubmit {
+	display: block;
+	text-align: center;
+	padding-top: 30px;
+}
+.buttonEdit {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #df2020;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 15px;
+	padding: 5px;
+	width: 120px;
+	height: 34px;
+	transition: all 0.5s;
+	cursor: pointer;
+}
+.buttonEdit:disabled{
+	background-color: #808080;
+}
+.buttonEdit span{
+	font-size: 15px
+}
+.button {
+	display: inline-block;
+	border-radius: 4px;
+	background-color: #df2020;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	width: 250px;
+	transition: all 0.5s;
+	cursor: pointer;
+	margin: 5px;
+}
+
+.button span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+	font-size: 15px
+}
+
+.button span:after {
+	content: url("../img/lockopen.png");
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.5s;
+}
+
+.button:hover span {
+	padding-right: 25px;
+}
+
+.button:hover span:after {
+	opacity: 1;
+	right: 0;
+}
+.CVVimg {
+	position: absolute;
+	margin-left: 10px;
+}
+.numCard {
+	background-repeat: no-repeat;
+	background-position: right;
+	background-size: 20%;
+
+}
+select {
+	border-radius: 4px;
+	height: 35px;
+	border: 1px solid #808080;
+}
+select:disabled {
+	background: #DCDCDC;
+	color: #FFFFFF;
+}
+input {
+	border-radius: 4px;
+	height: 31px;
+    border: 1px solid #808080;
+    padding-left: 5px;
+
+}
+input:disabled {
+	background: #DCDCDC;
+}
+input.ng-invalid.ng-dirty {
+	border: 2px solid ;
+	border-color: #FA787E;
+}
+
+input.ng-valid.ng-dirty {
+	border: 2px solid ;
+	border-color: #20B2AA;
+}
+img {
+	width: 124px;
+}
+
+input::-webkit-input-placeholder {
+	color:#D3D3D3;
+}
+input:-moz-placeholder {
+	color:#D3D3D3;
+}
+input::-moz-placeholder {
+	color:#D3D3D3;
+}
+input:-ms-input-placeholder {
+	color:#D3D3D3;
+}
+
+
+input:disabled::-webkit-input-placeholder {
+	color:#FFFFFF;
+}
+input:disabled:-moz-placeholder {
+	color:#FFFFFF;
+}
+input:disabled::-moz-placeholder {
+	color:#FFFFFF;
+}
+input:disabled:-ms-input-placeholder {
+	color:#FFFFFF;
+}
