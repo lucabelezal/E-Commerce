@@ -93,10 +93,10 @@ CREATE TABLE IF NOT EXISTS `showroom` (
 --
 
 INSERT INTO `showroom` (`s_id`, `district`, `location`, `contact_no`) VALUES
-(1, 'Dhaka', '75, Kakrail Super Market (2nd floor), Kakrail, Dhaka.', 1711008855),
-(2, 'Dhaka', '37, Rampura Market, Rampura, Dhaka.', 1844220055),
-(3, 'Dhaka', '22, Sector 6, Uttara, Dhaka.', 1944882200),
-(5, 'Dhaka', 'Y Market, Dhanmondi, Dhaka.', 1722885511);
+(1, 'São Paulo', '500, Av. Otto Baumgart, Centro, São Paulo.',  36366763),
+(2, 'Rio de Janeiro', '37, Rua Araci Martins, São Jorge, Novo Hamburgo.',  36366763),
+(3, 'Minas Gerais', '22, Rua Vinte e Cinco, Calhau, São Luís.', 36366763),
+(5, 'Rio Grande do Sul', '345, Avenida Vinte e Um de Julho, Novo Buritizal, Telêmaco Borba.', 36366763);
 
 -- --------------------------------------------------------
 
@@ -145,6 +145,19 @@ CREATE TABLE IF NOT EXISTS `client_user` (
   `email` varchar(80) NOT NULL,
   `password` varchar(130) NOT NULL,
   PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+--
+-- Table structure for table `product_order`
+--
+CREATE TABLE IF NOT EXISTS `product_order` (
+  `p_id` int(50) NOT NULL AUTO_INCREMENT,
+  `id_user` int(50) NOT NULL,
+  `name_user` varchar(80) NOT NULL,
+  `cpf_user` varchar(80) NOT NULL,
+  `number_order` varchar(80) NOT NULL,
+  `payment` varchar(80) NOT NULL,
+  PRIMARY KEY (`p_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
