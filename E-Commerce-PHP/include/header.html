@@ -87,14 +87,18 @@
             </form>
         </div>
         <?php foreach ($cartItems as $item) : ?>
-            <div id="cart-block" class="col-xs-5 col-sm-3 shopping-cart-box" style="width: 220px;">
-                <a class="cart-link" href="index.php?page=cart">
-                    <span class="title">Carrinho</span>
-                    <span class="total"><?php echo $item->getQuantity()?> itens - R$ <?php echo number_format($item->getSubTotal(), 2, ',', '.')?></span>
-                    <span class="notify notify-left"><?php echo $item->getQuantity()?></span>
-                </a>
-            </div>
+            <?php  $totalItem += $item->getQuantity()?>
+            <?php  $subTotalItem += $item->getSubTotal()?>
+            <?php  $quantityItem += $item->getQuantity()?>
         <?php endforeach;?>
+        <div id="cart-block" class="col-xs-5 col-sm-3 shopping-cart-box" style="width: 250px;">
+            <a class="cart-link" href="index.php?page=cart">
+                <span class="title">Carrinho</span>
+                <span class="total"><?php echo $totalItem?> itens - R$ <?php echo number_format($subTotalItem, 2, ',', '.') ?></span>
+                <span class="notify notify-left"><?php echo $quantityItem ?></span>
+            </a>
+        </div>
+        
     </div>
 </div>
 <!-- END MANIN HEADER -->
