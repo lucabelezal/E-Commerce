@@ -165,8 +165,6 @@ $result = mysqli_query($db_con, $query);
 								</div>
 								<div class="form-action">
 									<div class="button-group">
-										
-
 										<form action="index.php?page=cart&action=add" method="post">
 											<input name="id" type="hidden" value="<?php echo $row["id"] ?>"/>
 											<button type="submit" class="btn-add-cart">Adicionar ao Carrinho</button>

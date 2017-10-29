@@ -2,6 +2,9 @@
 require_once("sql_helper/db.php");
 $query = "select * from product where id={$_GET['id']}";
 $result = mysqli_query($db_con, $query);
+$id = $_GET['id'];
+session_start();
+$_SESSION['id'] = $id;
 ?>
 
 <!doctype html>
@@ -23,7 +26,6 @@ $result = mysqli_query($db_con, $query);
     <title>Products</title>
 </head>
 <body>
-
    <!-- Header -->
    <div class="menu">
     <?php include 'include/header.html';?>

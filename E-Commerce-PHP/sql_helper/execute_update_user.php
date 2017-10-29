@@ -1,7 +1,6 @@
 <?php	
-header("Content-Type: text/html;  charset=ISO-8859-1",true);
-error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
+//$id = = utf8_decode($_POST['id_user']);
 $full_name = utf8_decode($_POST['full_name']);
 $cpf = utf8_decode($_POST['cpf']);
 $cellphone = utf8_decode($_POST['cellphone']);
@@ -19,7 +18,7 @@ $password = "root";
 $dbname = "b_furniture";
 
 $servidor = &$_SERVER["http://localhost:8888/"];
-$redirect = $servidor."E-Commerce/E-Commerce-PHP/";
+$redirect = $servidor."E-Commerce/E-Commerce-PHP/finish_order.php";
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -29,13 +28,15 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "INSERT INTO `client_user`(full_name, cpf, cellphone, cep, full_adress, adress_complement, email, password) VALUES ('$full_name','$cpf','$cellphone','$cep', '$full_adress','$adress_complement','$email', '$MD5_password');";
+$sql = "UPDATE `client_user`
+        SET full_name='$full_name', cpf='$cpf', cellphone='$cellphone', cep='$cep', full_adress='$full_adress', adress_complement='$adress_complement'
+        WHERE email='$email';";
 
 if ($conn->query($sql) === TRUE) {
 
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
-    window.alert('Cadastro realizado com sucesso!')
-    window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/login.php';
+    window.alert('Alteração realizada com sucesso!')
+    window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/finish_order.php';
     </SCRIPT>");
 
 }else {
@@ -57,6 +58,7 @@ if ($conn->query($sql) === TRUE) {
 	echo $password;
 	echo "</br>";
 	echo $MD5_password;
+	echo "</br>";
 	echo "</br>";
 	echo $query;
 }

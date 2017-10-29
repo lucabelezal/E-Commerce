@@ -1,27 +1,32 @@
 <?php
+header("Content-Type: text/html;  charset=ISO-8859-1",true);
+error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+
 error_reporting(0);
 session_start();
+
 require_once("sql_helper/db.php");
 
 if(isset($_POST['submit'])){
-	$name = $_POST['uname'];
-	$pass = md5($_POST['pass']);
+	$email = $_POST['uname'];
+	$password = md5($_POST['pass']);
 
-	$query = "select * from user where uname='{$name}' and password='{$pass}'";
+	$query = "select * from client_user where email='{$email}' and password='{$password}'";
 	$result = mysqli_query($db_con, $query);
+	
 	if(mysqli_num_rows($result) == 1){
-		$_SESSION['name'] = $name;
-		if($name == "admin"){
-			$_SESSION['type']="admin";
-		}
-		header('Location: manage.php');
+		$_SESSION['email'] = $email;
+		header('Location: finish_order.php');
 	}
 	else{
-		$err = "Invalid username or password";
+		$err = "E-mail ou Senha inválido.";
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+			window.alert('E-mail ou Senha inválido.')
+			window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/login.php';
+			</SCRIPT>");
 	}
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -39,6 +44,58 @@ if(isset($_POST['submit'])){
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
 	<title></title>
+	<script type="text/javascript">
+		function fMasc(objeto,mascara) {
+			obj=objeto
+			masc=mascara
+			setTimeout("fMascEx()",1)
+		}
+		function fMascEx() {
+			obj.value=masc(obj.value)
+		}
+		function mTel(tel) {
+			tel=tel.replace(/\D/g,"")
+			tel=tel.replace(/^(\d)/,"($1")
+			tel=tel.replace(/(.{3})(\d)/,"$1)$2")
+			if(tel.length == 9) {
+				tel=tel.replace(/(.{1})$/,"-$1")
+			} else if (tel.length == 10) {
+				tel=tel.replace(/(.{2})$/,"-$1")
+			} else if (tel.length == 11) {
+				tel=tel.replace(/(.{3})$/,"-$1")
+			} else if (tel.length == 12) {
+				tel=tel.replace(/(.{4})$/,"-$1")
+			} else if (tel.length > 12) {
+				tel=tel.replace(/(.{4})$/,"-$1")
+			}
+			return tel;
+		}
+		function mCNPJ(cnpj){
+			cnpj=cnpj.replace(/\D/g,"")
+			cnpj=cnpj.replace(/^(\d{2})(\d)/,"$1.$2")
+			cnpj=cnpj.replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")
+			cnpj=cnpj.replace(/\.(\d{3})(\d)/,".$1/$2")
+			cnpj=cnpj.replace(/(\d{4})(\d)/,"$1-$2")
+			return cnpj
+		}
+		function mCPF(cpf){
+			cpf=cpf.replace(/\D/g,"")
+			cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+			cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+			cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+			return cpf
+		}
+		function mCEP(cep){
+			cep=cep.replace(/\D/g,"")
+			cep=cep.replace(/^(\d{5})(\d)/,"$1-$2")
+			cep=cep.replace(/\.(\d{3})(\d)/,".$1-$2")
+			return cep
+		}
+		function mNum(num){
+			num=num.replace(/\D/g,"")
+			return num
+		}
+	</script>
 </head>
 <body>
 
@@ -71,28 +128,48 @@ if(isset($_POST['submit'])){
 							<form class="form_manager" action="sql_helper/execute_register.php" method="post">
 
 
-<!-- 								<div class="form-group">
-									<label for="nome_register">Nome</label>
-									<input id="nome_register" type="text" class="form-control">
+								<div class="form-group">
+									<label for="full_name">Nome Completo</label>
+									<input  name="full_name" id="full_name" type="text" class="form-control">
 								</div>
 
 								<div class="form-group">
-									<label for="sobrenome_register">Sobrenome</label>
-									<input id="sobrenome_register" type="text" class="form-control">
-								</div> -->
+									<label for="cpf">CPF</label>
+									<input name="cpf" maxlength="14" id="cpf" type="text" class="form-control" onkeydown="javascript: fMasc( this, mCPF );">
+								</div>
+
+								<div class="form-group">
+									<label for="cellphone">Telefone Celular</label>
+									<input name="cellphone" id="cellphone" type="text" class="form-control" onkeydown="javascript: fMasc( this, mTel );">
+								</div>
+
+								<div class="form-group">
+									<label for="cep">CEP</label>
+									<input name="cep" maxlength="9" id="cep" type="text" class="form-control" onkeydown="javascript: fMasc( this, mCEP );">
+								</div>
+
+								<div class="form-group">
+									<label for="full_adress">Endereço Completo</label>
+									<input name="full_adress" id="full_adress" type="text" class="form-control">
+								</div>
+
+								<div class="form-group">
+									<label for="adress_complement">Complemento</label>
+									<input name="adress_complement" id="adress_complement" type="text" class="form-control">
+								</div>
 
 								<div class="form-group">
 									<label for="email_register">Email</label>
-									<input id="email_register" type="text"  name="email_register" class="form-control">
+									<input name="email_register" id="email_register" type="text" class="form-control">
 								</div>
 
 								<div class="form-group">
 									<label for="password_register">Senha</label>
-									<input id="password_register" type="password" name="password_register" class="form-control">
+									<input name="password_register" id="password_register" type="password" class="form-control">
 								</div>
 
 
-								<button class="button" type="submit" name="submit"><i class="fa fa-user"></i>Criar uma conta</button>
+								<button class="button" type="submit" value="Criar uma conta" name="submit"><i class="fa fa-user"></i>Criar uma conta</button>
 
 							</form>
 

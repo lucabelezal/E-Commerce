@@ -8,11 +8,14 @@ $result_cat = mysqli_query($db_con, $query_cat);
 require_once("sql_helper/db.php");
 $query = "select * from product where c_id={$_GET['cid']}";
 $result = mysqli_query($db_con, $query);
+$id = $_GET['cid'];
+session_start();
+$_SESSION['id'] = $id;
 ?>
 
 <!DOCTYPE html>
 
-<html>
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,8 +35,6 @@ $result = mysqli_query($db_con, $query);
 
 
 <body>
-
-
 	<div class="menu">
 		<?php include 'include/header.html';?>
 	</div>
@@ -71,6 +72,7 @@ $result = mysqli_query($db_con, $query);
 												<div class="side_navigation">
 													<ul>
 														<?php
+														
 														while ($row_cat = mysqli_fetch_assoc($result_cat)) 
 														{
 															$cat_id = $row_cat["c_id"];

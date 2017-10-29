@@ -12,6 +12,13 @@ $email = utf8_decode($_POST['email_register']);
 $password = utf8_decode($_POST['password_register']);
 $MD5_password= md5($password);
 
+$id_user = utf8_decode($_POST['id_user']);
+$name_user = utf8_decode($_POST['name_user']);
+$cpf_user = utf8_decode($_POST['cpf_user']);
+$random_string = intval( "0" . rand(1,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) . rand(0,9) );
+$number_order = $random_string;
+$payment = utf8_decode($_POST['payment']);
+
 
 $servername = "127.0.0.1:3306";
 $username = "root";
@@ -29,34 +36,18 @@ if ($conn->connect_error) {
 } 
 
 
-$sql = "INSERT INTO `client_user`(full_name, cpf, cellphone, cep, full_adress, adress_complement, email, password) VALUES ('$full_name','$cpf','$cellphone','$cep', '$full_adress','$adress_complement','$email', '$MD5_password');";
+$sql = "INSERT INTO `product_order`(id_user,name_user, cpf_user, number_order, payment) 
+        VALUES ('$id_user','$name_user','$cpf_user','$number_order', '$payment');";
 
 if ($conn->query($sql) === TRUE) {
 
 	echo ("<SCRIPT LANGUAGE='JavaScript'>
-    window.alert('Cadastro realizado com sucesso!')
-    window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/login.php';
+    window.alert('Pedido realizado com sucesso!')
+    window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/finish_order.php';
     </SCRIPT>");
 
 }else {
 	echo "Error: " . $sql . "<br>" . $conn->error;
-	echo $full_name;
-	echo "</br>";
-	echo $cpf;
-	echo "</br>";
-	echo $cellphone;
-	echo "</br>";
-	echo $cep;
-	echo "</br>";
-	echo $full_adress;
-	echo "</br>";
-	echo $adress_complement;
-	echo "</br>";
-	echo $email;
-	echo "</br>";
-	echo $password;
-	echo "</br>";
-	echo $MD5_password;
 	echo "</br>";
 	echo $query;
 }
@@ -83,9 +74,6 @@ $conn->close();
 <body>
 	<div>
 		<p><?php echo $msg; ?></p>
-		<p><?php echo $nome; ?></p>
-		<p><?php echo $senha; ?></p>
-		<p><?php echo $md5_teste; ?></p>
 		<br />
 		<a href="http://localhost:3306/E-Commerce/E-Commerce-PHP/">Voltar</a>
 	</div>

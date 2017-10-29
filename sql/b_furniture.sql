@@ -30,16 +30,16 @@ CREATE TABLE IF NOT EXISTS `category` (
   `c_id` int(5) NOT NULL AUTO_INCREMENT,
   `c_name` varchar(30) NOT NULL,
   PRIMARY KEY (`c_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`c_id`, `c_name`) VALUES
-(1, 'Sofa'),
-(2, 'Bed'),
-(3, 'Table');
+(1, 'Sofá'),
+(2, 'Cama'),
+(3, 'Mesa');
 
 -- --------------------------------------------------------
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `product` (
   `name` varchar(30) NOT NULL,
   `price` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `product`
@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `showroom` (
   `location` varchar(200) NOT NULL,
   `contact_no` int(11) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `showroom`
@@ -109,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `uname` varchar(30) NOT NULL,
   `password` varchar(130) NOT NULL,
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `user`
@@ -117,6 +117,35 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`u_id`, `uname`, `password`) VALUES
 (1, 'admin', 'd4047d3e56e6d6d63f7d16b85cd2fa88');
+
+--
+-- Table structure for table `contact_us`
+--
+
+CREATE TABLE IF NOT EXISTS `contact_us`(
+    id int NOT NULL AUTO_INCREMENT,
+    subject_message varchar(255),
+    email varchar(255) ,
+    number_requested int(255),
+    message varchar(255),
+    PRIMARY KEY (ID)
+);
+
+--
+-- Table structure for table `client_user`
+--
+CREATE TABLE IF NOT EXISTS `client_user` (
+  `c_id` int(5) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(80) NOT NULL,
+  `cpf` varchar(80) NOT NULL,
+  `cellphone` varchar(255) NOT NULL,
+  `cep` varchar(80) NOT NULL,
+  `full_adress` varchar(80) NOT NULL,
+  `adress_complement` varchar(80) NOT NULL,
+  `email` varchar(80) NOT NULL,
+  `password` varchar(130) NOT NULL,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 define("DIR", dirname(__FILE__));
 define("DS", DIRECTORY_SEPARATOR);

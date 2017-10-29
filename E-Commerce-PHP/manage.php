@@ -1,4 +1,7 @@
 <?php
+header("Content-Type: text/html;  charset=ISO-8859-1",true);
+error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
+
 error_reporting(0);
 session_start();
 
@@ -99,7 +102,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<label for="cat_name">Categoria:</label>
 				<input class="form-control" type="text" name="cat_name" id="cat_name">
 			</div>				
-			<button class="btn btn-primary" type="submit" name="submit">ADICIONAR CATEGORIA</button>
+			<button class="btn btn-primary" type="submit" value="ADICIONAR CATEGORIA" name="submit">ADICIONAR CATEGORIA</button>
 		</form>
 
 
@@ -126,7 +129,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<br />
 			</div>
 			<br />
-			<button class="btn btn-primary" type="submit" name="submit">DELETAR CATEGORIA</button>
+			<button class="btn btn-primary" type="submit" value="DELETAR CATEGORIA" name="submit">DELETAR CATEGORIA</button>
 		</form>
 
 		
@@ -167,7 +170,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="text" name="set_price" id="set_price">
 			</div>
 
-			<button type="submit" class="btn btn-primary" name="submit">ADICIONAR PRODUTO</button>
+			<button type="submit" class="btn btn-primary" value="ADICIONAR PRODUTO" name="submit">ADICIONAR PRODUTO</button>
 		</form>
 
 
@@ -188,7 +191,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="text" name="ch_price" id="ch_price">
 			</div>
 
-			<button type="submit" class="btn btn-primary" name="submit">MUDAR O PREÇO</button>
+			<button type="submit" class="btn btn-primary" value="MUDAR O PREÇO" name="submit">MUDAR O PREÇO</button>
 		</form>
 
 
@@ -205,7 +208,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="text" name="del_p_id" id="del_p_id">
 			</div>				
 			
-			<button type="submit" class="btn btn-primary" name="submit">EXCLUIR PRODUTO</button>
+			<button type="submit" class="btn btn-primary" value="EXCLUIR PRODUTO" name="submit">EXCLUIR PRODUTO</button>
 		</form>
 
 
@@ -234,7 +237,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="text" name="contact" id="contact">
 			</div>
 			
-			<button class="btn btn-primary" type="submit" name="submit">ADICIONAR Showroom</button>
+			<button class="btn btn-primary" type="submit" value="ADICIONAR Showroom" name="submit">ADICIONAR Showroom</button>
 		</form>
 
 
@@ -250,7 +253,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="text" name="del_show" id="del_show_id">
 			</div>
 
-			<button class="btn btn-primary" type="submit" name="submit">EXCLUIR Showroom</button>
+			<button class="btn btn-primary" type="submit" value="EXCLUIR Showroom" name="submit">EXCLUIR Showroom</button>
 		</form>
 
 
@@ -278,7 +281,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 				<input class="form-control" type="password" name="conf_pass" id="conf_pass">
 			</div>			
 
-			<button type="submit" class="btn btn-primary" name="submit">MUDAR SENHA</button>
+			<button type="submit" class="btn btn-primary" value="MUDAR SENHA" name="submit">MUDAR SENHA</button>
 		</form>
 
 	</div>
