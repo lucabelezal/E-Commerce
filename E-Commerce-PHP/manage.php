@@ -178,7 +178,7 @@ $result_cat2 = mysqli_query($db_con, $query_cat);
 		<form class="form_manager" action="sql_helper/execute.php" method="post">	
 
 			<div class="form-group">
-				<label class="title">Change Product Price:</label>
+				<label class="title">Mude o preço do produto::</label>
 			</div>
 
 			<div class="form-group">
