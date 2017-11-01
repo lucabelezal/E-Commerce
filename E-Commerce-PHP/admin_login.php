@@ -4,6 +4,7 @@ error_reporting (E_ALL & ~ E_NOTICE & ~ E_DEPRECATED);
 
 error_reporting(0);
 session_start();
+
 require_once("sql_helper/db.php");
 
 if(isset($_POST['submit'])){
@@ -12,6 +13,7 @@ if(isset($_POST['submit'])){
 
 	$query = "select * from user where uname='{$name}' and password='{$pass}'";
 	$result = mysqli_query($db_con, $query);
+
 	if(mysqli_num_rows($result) == 1){
 		$_SESSION['name'] = $name;
 		if($name == "admin"){
@@ -20,7 +22,11 @@ if(isset($_POST['submit'])){
 		header('Location: manage.php');
 	}
 	else{
-		$err = "Invalid username or password";
+		$err = "E-mail ou Senha inválido.";
+		echo ("<SCRIPT LANGUAGE='JavaScript'>
+			window.alert('E-mail ou Senha inválido.')
+			window.location.href='http://localhost:8888/E-Commerce/E-Commerce-PHP/manage.php';
+			</SCRIPT>");
 	}
 }
 ?>
@@ -102,7 +108,7 @@ html, body {
 						<div class="" style="border: 1px solid #c0c0c0; padding: 40px;">
 							<h3>Já é cadastrado?</h3>
 
-							<form action="login.php" method="post" style="width: 300px;">
+							<form action="admin_login.php" method="post" style="width: 300px;">
 								<?php echo $err; ?>
 								<br /><br />
 
